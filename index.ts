@@ -1,7 +1,10 @@
 // Import stylesheets
 import './style.css';
 class Categories {
-  chance() {console.log("h")}
+  chance() {
+    const addAllscores = (total, num) => total + num;
+    const playerScoreIsChance = (scores: number[], addAllscores) => scores.reduce(addAllscores);
+  }
   yahzee() {}
   ottffs() {}
   pair() {}
@@ -14,22 +17,23 @@ class Categories {
 }
 let categoriesResult = new Categories();
 const getScores = (playerDiceResults: number[]) => {
-  
-  const searchScoreBycategorie = (lookUpScoreType:unknown, defaultScore:any = 0) => (category_expression) =>
-    (lookUpScoreType[category_expression] || lookUpScoreType[defaultScore])();
+  const searchScoreBycategorie =
+    (lookUpScoreType: unknown, defaultScore: any = 0) =>
+    (category_expression) =>
+      (lookUpScoreType[category_expression] || lookUpScoreType[defaultScore])();
 };
 
 const scores = {
-  chance:categoriesResult.chance,
-  yahzee:9,
-  ottffs:6,
-  pair:0,
-  twoPairs:0,
-  twoOfaKind:9,
-  threeOfaKind:7,
-  smallStraight:9,
-  largeStraight:9,
-  fullHouse:8,
-}
+  chance: categoriesResult.chance,
+  yahzee: 9,
+  ottffs: 6,
+  pair: 0,
+  twoPairs: 0,
+  twoOfaKind: 9,
+  threeOfaKind: 7,
+  smallStraight: 9,
+  largeStraight: 9,
+  fullHouse: 8,
+};
 
-console.log(scores['chance']())
+
